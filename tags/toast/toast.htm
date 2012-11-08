@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Toast Tag</title>
+		<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.0.0.js"></script>
+		<script type="text/javascript" src="./toast.js"></script>
+
+		<style type="text/css">
+			
+			.xRTML-Toast{ border: 1px solid black; padding: 15px; margin: 15px; background: #FFF; }
+			
+			.xRTML-Toast-Banner-Mask {position:absolute; display:none; top:0px; left:0px; height:100%; width:100%; background:#000; z-index:800}
+
+			.xRTML-Toast-Banner {position:absolute; display:none; padding:14px 17px; z-index:900}
+			
+			.xRTML-Toast-Banner-Loading {padding:15px; -moz-border-radius:5px; border-radius:5px; background:#fff; border-right:1px solid #333; border-bottom:1px solid #333}
+
+			.xRTML-Toast-Banner-Close {position:absolute; top:0px; right:0px; width:30px; height:30px; cursor:pointer; background:url(data:image/png;base64,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) no-repeat}
+
+			.xRTML-Toast-Banner-Close:hover {background-position:0 -30px}
+			
+			.xRTML-Toast-Banner-Content {}
+		</style>
+
+	</head>
+	<body>
+		<input type="button" value="Image Toast" onclick="sendToast('image');" />
+    	<input type="button" value="HTML Toast" onclick="sendToast('html');" />
+    	<input type="button" value="Video Toast" onclick="sendToast('video');" />
+    	<input type="button" value="Iframe Toast" onclick="sendToast('iframe');" />
+	</body>
+</html>

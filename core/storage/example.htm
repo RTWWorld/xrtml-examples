@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Storage</title>
+		<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.0.0.js"></script>
+		<script type="text/javascript" src="./example.js"></script>
+	</head>
+	<body>
+		<h1>Storage Data Viewer</h1>
+		<div id="storage-data-viewer"></div>
+		<h1>Storage Operation Buttons</h1>
+		<div>
+			<label for="incr-button">Increment By:</label>
+			<input id="incr-value" type="text"/>
+			<input id="incr-button" type="button" value="Increment" onclick="incr();"/>
+
+			<br/>
+	
+			<label for="set-button">Set:</label>
+			<input id="set-value" type="text"/>
+			<input id="set-button" type="button" value="Set" onclick="set();"/>
+
+			<br/>		
+			<input id="del-button" type="button" value="Del" onclick="del();"/>
+		</div>
+
+	</body>
+</html>

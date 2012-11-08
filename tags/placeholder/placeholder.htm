@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Placeholder Tag</title>
+		<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.0.0.js"></script>
+		<script type="text/javascript" src="./placeholder.js"></script>
+	</head>
+	<body>
+		<script type="text/html" id="placeholder-template" >
+			<img data-bind="attr:{src: url}"></img>
+		</script>
+
+		<h1>Select an image</h1>
+		<div>
+			<label for="xrtml-rd">
+				<img src="xrtml.gif" width="80px" height="50px" />
+			</label>
+			<input id="xrtml-rd" class="image-selector" type="radio" name="image" value="xrtml" onclick="insert();" />
+			<label for="pm-rd">
+				<img src="pm.gif" width="80px" height="50px" />
+			</label>
+			<input id="pm-rd" class="image-selector" type="radio" name="image" value="pm" onclick="insert();" />
+			<label for="adserver-rd">
+				<img src="ad.gif" width="80px" height="50px" />
+			</label>
+			<input id="adserver-rd" class="image-selector" type="radio" name="image" value="ad" onclick="insert();" />
+			<label for="ortc-rd">
+				<img src="ortc.gif" width="80px" height="50px" />
+			</label>
+			<input id="ortc-rd" class="image-selector" type="radio" name="image" value="ortc" onclick="insert();" />
+		</div>
+		<h2>Placeholder</h2>
+		<div id="placeholder-target">
+
+		</div>
+
+	</body>
+</html>

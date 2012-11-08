@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Dashboard</title>
+		<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.0.0.js"></script>
+		<script type="text/javascript" src="./app.js"></script>
+	</head>
+	<body>
+		<script type="text/html" id="dashboard-template">
+			<div>
+				<h1>Connections/Channels Dashboard</h1>
+
+				<label for="total-connections">Total Connections: </label>
+				<input id="total-connections" type="text" data-bind="value: clients()" readonly="readonly"></input>
+
+				<label for="total-channels">Total Channels Subscribed:</label>
+				<input id="total-channels" type="text" data-bind="value: channels().length" readonly="readonly"></input>
+				
+				<h3>Channels:</h3>
+				
+				<ul data-bind="foreach: channels">
+					<li>
+						<label for="channel-name">Channel Name: </label>
+						<input id="channel-name" type="text" data-bind="value: name" readonly="readonly"></input>						
+						<label for="total-users">Users Subscribed: </label>
+						<input id="total-users" type="text" data-bind="value: users().length" readonly="readonly"></input>						
+					</li>
+				</ul>
+				
+				<h3>Logs:</h3>
+				<textarea data-bind="value: logs" style="margin: 2px; height: 300px; width: 600px; resize: none;" readonly></textarea>
+
+			</div>
+
+			<div>
+				
+			</div>
+		</script>
+
+		<div id="dashboard"></div>
+
+	</body>
+</html>

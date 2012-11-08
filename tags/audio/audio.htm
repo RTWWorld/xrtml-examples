@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Audio Tag</title>
+		<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.0.0.js"></script>
+		<script type="text/javascript" src="./audio.js"></script>
+	</head>
+	<body>
+		<h1>Music List</h1>
+			
+		<div>
+			<p>
+				<label for="audio1">Pay the rent</label>
+				<input id="audio1" type="radio" name="audio" value="paytherent" checked="checked" />
+			</p>
+			
+			<p>
+				<label for="audio2">Fake precious stone</label>
+				<input id="audio2" type="radio" name="audio" value="fakepreciousstone" />
+			</p>
+			
+			<p>
+				<label for="audio3">Borrowed Time</label>
+				<input id="audio3" type="radio" name="audio" value="borrowedtime" />
+			</p>
+		</div>
+
+		<input id="send-play-music" type="button" value="Play Music" onclick="send('play')" />
+		<input id="send-stop-music" type="button" value="Stop Music" onclick="send('stop')" />
+
+		<br/>
+		<br/>
+
+	</body>
+</html>

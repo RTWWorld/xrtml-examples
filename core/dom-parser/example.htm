@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<title>xRTML DOM Parser</title>
+		<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.0.0.js"></script>		
+	</head>
+	<body>
+		<!-- 
+
+		xRTML tags can be instantiated two different ways: via JavaScript and via markup.
+		
+		Since the reading of the markup tag attributes is case insensitive, we needed to create a mechanism to parse the xrtml markup to JavaScript object notation in order to create the respective tag. To do that we use the xRTML DOMParser module.
+
+		In this example we will show how to create a connection and an execute tag.
+
+		-->
+
+		<!-- Here we create a new connection via markup -->
+		<xrtml:config version="3.0" debug="true">
+			<xrtml:connections>
+				<!-- 
+					The attributes of the xrtml markup are case insensitive.
+					For more infomation about the connection visit http://docs.xrtml.org/3-0-0/javascript/xrtml.connectionmanager.connection.htm 
+				-->
+				<xrtml:connection id="myConnection" uRl="http://developers2.realtime.livehtml.net/server/2.1" APPKEY="myAppKey" authToKen="myAuthToken" verSion="3.0">
+					<xrtml:channels>
+						<xrtml:channel name="myChannel"></xrtml:channel>
+					</xrtml:channels>
+				</xrtml:connection>
+			</xrtml:connections>
+		</xrtml:config>
+
+		<!-- Here we create a new execute tag via markup -->
+		<xrtml:execute callBack="myCallback" version="3.0">
+			<xrtml:triggers>
+				<xrtml:trigger name="myTrigger"></xrtml:trigger>
+			</xrtml:triggers>
+		</xrtml:execute>
+
+		<!-- Here we add a button with the click handler that sends a message -->
+		<input type="button" value="Send Random Message" onclick="sendMessage();" /> 
+
+		<script type="text/javascript">
+			// Definition of the execute callback.
+			function myCallback(message){
+				alert(xRTML.JSON.stringify(message));
+			};
+			// Definition of the click handler that sends a message with random content
+			function sendMessage(){
+				xRTML.ConnectionManager.sendMessage({
+					connections: ["myConnection"],
+					channel: "myChannel",
+					content: xRTML.MessageManager.create({
+						trigger:"myTrigger",
+						action: null, 
+						data: {
+							value: "Random Value"
+						}
+					})
+				});
+			};
+		</script>
+	</body>
+</html>

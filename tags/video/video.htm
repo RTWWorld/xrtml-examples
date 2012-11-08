@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Video Tag</title>
+		<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.0.0.js"></script>
+		<script type="text/javascript" src="./video.js"></script>
+	</head>
+	<body>
+		<h1>Video List</h1>
+			
+		<div>
+			<p>
+				<label for="video1">Drawingboard</label>
+				<input id="video1" type="radio" name="video" value="drawingboard" checked="checked">
+			</p>
+			
+			<p>
+				<label for="video2">Map</label>
+				<input id="video2" type="radio" name="video" value="map">
+			</p>
+			
+			<p>
+				<label for="video3">Mouse Tracker</label>
+				<input id="video3" type="radio" name="video" value="mousetracker">
+			</p>
+		</div>
+
+		<input id="send-play-music" type="button" value="Play Music" onclick="send('play')" />
+		<input id="send-stop-music" type="button" value="Stop Music" onclick="send('stop')" />
+
+		<br/>
+		<br/>
+
+	</body>
+</html>

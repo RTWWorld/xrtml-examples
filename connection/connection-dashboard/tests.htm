@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Dashboard Tester</title>
+		<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.0.0.js"></script>
+		<script type="text/javascript" src="./tests.js"></script>
+	</head>
+	<body>
+		<h1>Connection Options</h1>
+		<input type="button" value="Connect" onclick="connect();" />
+		<input type="button" value="Disconnect" onclick="disconnect();" />
+		<br/>
+
+		<h1>Channel List</h1>
+		<p>To subscribe or unsubscribe channels you must be connected</p>		
+
+		<label for="myChannel1">Subscribe/Unsubscribe Channel1</label>
+		<input id="myChannel1" type="checkbox" name="channel" value="Channel1" onchange="oncheck(this);" />
+		<br/>
+
+  		<label for="myChannel2">Subscribe/Unsubscribe Channel2</label>
+  		<input id="myChannel2" type="checkbox" name="channel" value="Channel2" onchange="oncheck(this);"/>
+  		<br/>
+
+		<label for="myChannel3">Subscribe/Unsubscribe Channel3</label>
+  		<input id="myChannel3" type="checkbox" name="channel" value="Channel3" onchange="oncheck(this);"/>
+  		<br/>
+
+	</body>
+</html>

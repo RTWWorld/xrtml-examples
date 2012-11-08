@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Templating Example</title>
+		<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.0.0.js"></script>
+		<script type="text/javascript" src="./example.js"></script>
+	</head>
+	<body>
+		<!-- Here you can see some of the bindings you can apply to your templates -->
+		<script type="text/html" id="my-template">
+
+			<h1 data-bind="text: me.fullName"></h1>
+
+			<h4 data-bind="text: me.firstName"></h4>
+			<h4 data-bind="text: me.lastName"></h4>
+
+			<label for="firstName">First Name:</label>
+			<input id="firstName" type="text" value=""/>
+
+			<label for="lastName">Last Name:</label>
+			<input id="lastName" type="text" value=""/>
+
+			<input type="button" value="Add Friend" data-bind="click: function(data, event) { addFriend({ firstName: xRTML.Sizzle('#firstName')[0].value, lastName: xRTML.Sizzle('#lastName')[0].value}); }" />
+			<hr/>
+
+			<h1>My Friends</h1>
+			<hr/>
+			<div data-bind="template: { name: 'friend-template', foreach: myFriends }">
+			</div>
+
+		</script>
+
+		<!-- Here is the second template we use in this example -->
+		<script type="text/html" id="friend-template">
+			<div>
+				<div>
+					<span>First Name: </span>
+					<span data-bind="text: firstName"></span>
+				</div>
+				<div>
+					<span>Last Name: </span>
+					<span data-bind="text: lastName"></span>
+				</div>				
+				<div>
+					<strong>Full Name: </strong>
+					<strong data-bind="text: fullName"></strong>
+				</div>
+			</div>
+			<hr/>
+		</script>
+
+		<div id="target"></div>
+
+	</body>
+</html>

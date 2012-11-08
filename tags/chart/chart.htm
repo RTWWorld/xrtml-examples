@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Chart Tag</title>
+		<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.0.0.js"></script>
+		<script type="text/javascript" src="./chart.js"></script>
+
+		<style type="text/css">
+			.buttons-container {
+				width: 600px; 
+			  	font: 15px/17px 'NobileRegular', arial, sans-serif; 
+			  	color: #000; 
+			  	margin: 0 auto;
+			  	background: #ebebeb;
+			  	text-align:center;
+			  	margin-bottom: 10px;
+			  	padding-bottom: 20px;
+			}
+
+			.buttons-container input { height: 40px; width: 150px; }
+
+			#chart01{
+				margin-top:10em;
+			}
+
+			.xrtml-chart { width: 600px; font: 15px/17px 'NobileRegular', arial, sans-serif; color: #000; margin: 0 auto; }
+
+			.xrtml-chart h1 {
+			    color: #3E576F;
+			    font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,Arial,Helvetica,sans-serif;
+			    font-size: 16px;
+			    font: 15px/17px 'NobileRegular',arial,sans-serif;
+			    margin:5px;
+			}
+
+			.xrtml-chart h2
+			{
+			    color: #6D869F;
+			    font-family: "Lucida Grande","Lucida Sans Unicode",Verdana,Arial,Helvetica,sans-serif;
+			    font-size: 12px;
+			     font: 11px/13px 'NobileRegular',arial,sans-serif;
+			     margin-bottom:5px;
+			}
+
+			/* Short reset and general styles */
+			.xrtml-chart ul { list-style-type: none; margin: 0; padding: 0; float: left; }
+			.xrtml-chart ul li { margin: 0; padding: 0; }
+
+			.xrtml-chart .values,
+			.xrtml-chart .items { width: 600px; float: left; }
+			.xrtml-chart .items { background: #ebebeb; margin-top: 10px; -webkit-border-bottom-right-radius: 6px; -webkit-border-bottom-left-radius: 6px; -moz-border-radius-bottomright: 6px; -moz-border-radius-bottomleft: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; text-shadow: 1px 1px 0 #fff; }
+			.xrtml-chart .values { position: relative; background-color: transparent; -webkit-border-top-left-radius: 6px; -webkit-border-top-right-radius: 6px; -moz-border-radius-topleft: 6px; -moz-border-radius-topright: 6px; border-top-left-radius: 6px; border-top-right-radius: 6px; -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ebebeb',EndColorStr='#ffffff')";
+			    border-top: 1px solid #999;
+			    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ebebeb),color-stop(1, #ffffff));
+			}
+
+			.xrtml-chart ul.legend { width: 180px; padding: 10px 0 0 20px; margin: 0 0 25px 0;}
+			.xrtml-chart ul.legend li { margin: 5px 0; color: #999; font-size: 14px; clear: both; }
+			.xrtml-chart ul.legend li span  
+			{
+			    display: inline-block; 
+			    font: 15px/17px 'NobileRegular',arial,sans-serif; 
+			    color: #3E576F;
+			    text-shadow: 1px 1px 0 #fff; 
+			    margin-bottom: 10px; 
+			}
+
+			.xrtml-chart .items strong  
+			{
+			    display: block;
+				width: 180px;
+				height: 65px;
+				padding-left: 20px;
+				font: 17px/20px 'NobileBold', arial, sans-serif;
+				float: left;
+			}
+
+			.xrtml-chart .items ul { width: 400px; }
+			.xrtml-chart .items ul li { display: inline; text-align: center; line-height: 20px; clear: left; }
+			.xrtml-chart .items ul li span { display: inline-block; text-align: center; }
+
+			.xrtml-chart a { display: inline-block; background-color: #74a6c8; color: #fff; text-decoration: none; text-shadow: 0 0 0; padding: 1px 6px; margin-top: 2px; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; border-top: 1px solid #666; -webkit-transition: background-color .1s ease-in-out; -moz-transition: background-color .1s ease-in-out; -o-transition: background-color .1s ease-in-out; transition: background-color .1s ease-in-out; }
+			.xrtml-chart a:hover { background-color: #000; }
+
+			.xrtml-chart ul.graph { width: 400px; position: absolute; bottom: 0; right: 0; }
+			.xrtml-chart ul.graph li { display: inline; clear: left; }
+			.xrtml-chart ul.graph li span { display: inline-block; background: #74a6c8; color: #fff; padding: 0 0 10px; -webkit-border-top-left-radius: 6px; -webkit-border-top-right-radius: 6px; -moz-border-radius-topleft: 6px; -moz-border-radius-topright: 6px; border-top-left-radius: 6px; border-top-right-radius: 6px; border-top: 3px solid #a5cae0; text-align: center; font: 20px/20px 'NobileBold', arial, sans-serif; letter-spacing: -1px; text-shadow: 1px 1px 0 #000; }
+
+			.ui-effects-wrapper span#id1{ overflow:'none' !important;  }
+
+			.xrtml-chart .items ul li em,
+			.xrtml-chart .items ul li b { color: #74a6c8; font-style: normal; font-weight: normal; font-size: 18px; line-height: 33px; }
+
+			/* Widths of Graph, Label and Vote must be equal */
+			.xrtml-chart ul.graph li span,
+			.xrtml-chart .items ul li span { width: 65px; margin: 0 10px; }
+		</style>
+	</head>
+	<body>
+
+	    <div id="chart01"></div>
+
+		<div class="buttons-container">
+			<input type="button" onclick="updateValue(); return false;" value="UPDATE">
+			<input type="button" onclick="incrementValue(); return false;" value="INCREMENT">
+			<input type="button" onclick="updateSeries(); return false;" value="UPDATE SERIES">
+		</div>
+
+	</body>
+</html>

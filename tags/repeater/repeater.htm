@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Repeater Tag</title>
+		<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.0.0.js"></script>
+		<script type="text/javascript" src="./repeater.js"></script>
+	</head>
+	<body>
+		<script type="text/html" id="repeater-template" >
+			<li data-bind="text: value"></li>
+		</script>
+
+		<label for="message-source">Message Source: </label>
+		<input id="message-source" type="text" value="Message Content" />
+		<input type="button" value="Insert" onclick="insert();" />
+		<input type="button" value="Insert" onclick="remove();" />
+
+		<hr />
+		<h1>Repeater List</h1>
+		<ul id="repeater-target">
+		</ul>
+	</body>
+</html>
