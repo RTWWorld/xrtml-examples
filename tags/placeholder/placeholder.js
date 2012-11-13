@@ -25,7 +25,7 @@ xRTML.load( function() {
         // Initial data to populate 
         initialData: { url : "xrtml.gif" },
         // The trigger of the tag
-        triggers:[{ name: "myTrigger" }]
+        triggers:["myTrigger"]
     });
 });
 

@@ -32,7 +32,7 @@ xRTML.load(function(){
             { value : "initial Value 2" },
             { value : "initial Value 3" }
         ],
-        triggers:[{name:"myTrigger"}]
+        triggers:["myTrigger"]
     });
 });
 

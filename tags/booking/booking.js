@@ -54,6 +54,6 @@ xRTML.load(function () {
             ]
         },
         // The triggers of the tag.
-        triggers:[{ name: 'myTrigger'}]
+        triggers:['myTrigger']
     });
 });

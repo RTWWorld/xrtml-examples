@@ -19,7 +19,7 @@ xRTML.load(function(){
 	// For more information about the Toast tag visit http://docs.xrtml.org/3-0-0/javascript/xrtml.tags.toast.htm
 	xRTML.TagManager.create({
 		name:'Toast',
-		triggers:[{name:'toast-trigger'}]
+		triggers:['toast-trigger']
 	});
 });
 

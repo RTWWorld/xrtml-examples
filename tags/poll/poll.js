@@ -23,7 +23,7 @@ xRTML.ready( function() {
         connections:['myConnection'],
         target: '#poll01',
         votesAllowed: 500,
-        triggers:[{name:'poll1Trigger'}],
+        triggers:['poll1Trigger'],
         voteItems:[
             { name: 'Item 1' },
             { name: 'Item 2' }

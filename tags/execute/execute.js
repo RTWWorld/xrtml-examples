@@ -31,7 +31,7 @@ xRTML.ready(function(){
     		xRTML.Sizzle("#container1")[0].appendChild(li);
     	},
     	// The array of triggers to register. Every message received with the trigger 'execute-test' will be process by this execute tag.
-    	triggers:[{ name:'execute-trigger'}]
+    	triggers:['execute-trigger']
     });
 });
 

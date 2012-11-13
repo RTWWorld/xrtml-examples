@@ -19,7 +19,7 @@ xRTML.ready(function(){
     xRTML.TagManager.create({
         name:'Chart',
         id:'chart01',
-        triggers:[{name:'chart1Trigger'}],
+        triggers:['chart1Trigger'],
         // The type of the chart.
         chartingPlatform:'htmlchart',
         settings:{

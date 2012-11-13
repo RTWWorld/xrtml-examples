@@ -23,7 +23,7 @@ xRTML.load(function () {
         name: 'Audio',
         // Defines if the control bars are visible.
         controlsBar: true,
-        triggers:[{ name: 'myTrigger'}]
+        triggers:['myTrigger']
     });
 });
 

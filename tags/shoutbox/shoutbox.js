@@ -28,7 +28,7 @@ xRTML.load(function () {
         connections: ['myConnection'],                                
         channelId: "myChannel",
         // The trigger of the Shoutbox.
-        triggers: [{ name: 'myTrigger'}],
+        triggers: ['myTrigger'],
         // The target where the Shoutbox elements will be rendered.
         target: "#shoutbox"
     });
