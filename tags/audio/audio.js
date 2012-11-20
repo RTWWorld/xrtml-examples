@@ -8,7 +8,7 @@ xRTML.ready(function (e) {
 	// At this point, since xRTML is ready, we need to create a connection in order to send messages.
 	// To do that we use method "create" of the ConnectionManager module.
     connection = xRTML.ConnectionManager.create({
-        url: "http://developers2.realtime.livehtml.net/server/2.1",
+        url: "http://ortc-developers.realtime.co/server/2.1",
         id: "myConnection",
         appKey: 'myAppKey',
         authToken: 'myAuthToken',

@@ -9,7 +9,7 @@ xRTML.ready(function (e) {
 	// To do that we use method "create" of the ConnectionManager module.
     connection = xRTML.ConnectionManager.create({
         // The url of the server.
-        url: "http://developers2.realtime.livehtml.net/server/2.1",
+        url: "http://ortc-developers.realtime.co/server/2.1",
         // The id of the connection.
         id: "myConnection",
         // The application key.

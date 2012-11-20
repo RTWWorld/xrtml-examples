@@ -9,7 +9,7 @@ xRTML.ready(function (e) {
 	// At this point, since xRTML is ready, we need to create a connection in order to send messages.
 	// To do that we use method "create" of the ConnectionManager module.
     connection = xRTML.ConnectionManager.create({
-        url: "http://developers2.realtime.livehtml.net/server/2.1",
+        url: "http://ortc-developers.realtime.co/server/2.1",
         id: "myConnection",
         appKey: 'myAppKey',
         authToken: 'myAuthToken',
@@ -20,7 +20,7 @@ xRTML.ready(function (e) {
         connect: function(e){
 
             // Now we create a instance of storage.
-            storage = xRTML.StorageManager.create({ id: 'S1', connectionId: 'myConnection', baseUrl: 'http://ec2-50-16-80-130.compute-1.amazonaws.com' });
+            storage = xRTML.StorageManager.create({ id: 'S1', connectionId: 'myConnection', baseUrl: 'http://storage01.realtime.co' });
 
             // To fill the initial value of the "#storage-data-viewer" we need to get the value of the key "MyStorageAppKey" in the storage.
             // To do that we call the get function. Every storage function have a callback. The callback argument is the result of the operation performed.
