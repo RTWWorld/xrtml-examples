@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+	<title>Blog Post Example</title>
+	<script type="text/javascript" src="http://code.xrtml.org/xrtml-custom-3.0.0-min.js"></script>
+</head>
+<body>
+	<div id="myTarget"></div>
+	<script type="text/html" id="myTemplate">
+	    <p data-bind="text: myProperty2(), visible: myProperty1() != 'Write something...'"></p>
+	    <p data-bind="text: myProperty4(), visible: myProperty3().length != 0"></p>
+	    <input type="text" data-bind="value: myProperty1"></input>
+	    <input type="button" data-bind="click: add" value="ADD"></input>
+	    <ul data-bind="foreach: myProperty3()">
+	        <li data-bind="text: $data"></li>
+	    </ul>
+	</script>
+
+	<script type="text/javascript">
+
+		var MyApp = function(){ 
+		    this.myProperty1 = xRTML.Templating.observable('Write something...');
+		 
+		    this.myProperty2 = xRTML.Templating.observable(xRTML.Common.Function.proxy(function(){
+		        return ('Last Value of the input text: ' + this.myProperty1());
+		    }, this));
+		 
+		    this.myProperty3 = xRTML.Templating.observable(new Array());
+		 
+		    this.myProperty4 = xRTML.Templating.observable(xRTML.Common.Function.proxy(function(){
+		        return ('Last inserted Item: ' + this.myProperty3()[this.myProperty3().length - 1]);
+		    }, this));
+		 
+		    this.add = function(){
+		        this.myProperty3.push(this.myProperty1());
+		    };
+		};
+
+		xRTML.load(function(){
+		    var app = new MyApp();
+		    xRTML.Templating.applyBindings({
+		        node: xRTML.Sizzle("#myTarget")[0],
+		        binding: { 
+		            template: { 
+		                name: "myTemplate", 
+		                data: app
+		            } 
+		        }
+		    });
+		});
+
+	</script>
+
+</body>
+</html>
