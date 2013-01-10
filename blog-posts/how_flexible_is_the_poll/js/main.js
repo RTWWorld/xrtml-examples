@@ -3,7 +3,7 @@ xRTML.load(function(){
 	xRTML.Config.debug=true;
 	var connectionConfig = {
 		id:'myConnection',
-		appKey:'nVQQHa',
+		appKey:'myAppKey',
 		authToken:'myAuthToken',
 		url:'http://ortc-developers.realtime.co/server/2.1',
 		channels:[{name:'myChannel'}]
