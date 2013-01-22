@@ -1,5 +1,6 @@
 # xRTML Videochat Tag #
-The Videochat tag allow users to communicate through a video feed and uses [OpenTok](http://www.tokbox.com/) API as the video comunication provider. The tag represent a basic "videochat room" where users can interact.
+
+The Videochat tag allow users to communicate through a video feed representing a basic "videochat room" where users can interact.
 
 ## How it works ##
 
