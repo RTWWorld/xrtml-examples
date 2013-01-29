@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="http://code.xrtml.org/xrtml-custom-3.0.0-min.js"></script>
+	<script type="text/javascript" src="xrtml-rtc.js"></script>
+	<script type="text/javascript">
+	    xRTML.Config.debug = true;
+		xRTML.ready(function() {
+			xRTML.ConnectionManager.create({
+	            url: "http://ortc-developers.realtime.co/server/2.1",
+	            id: "c1",
+	            appKey: '<APPKEY>',
+	            authToken: '<AUTHTOKEN>',
+	            channels: [{ name: 'webrtc_channel'}]
+	        });
+		});
+
+		var rtcTag = null;
+		xRTML.load(function () {
+		    xRTML.TagManager.create({
+		        name: "webrtc",
+                id: "xrtml_webrtc_tag",
+		        channelId: "webrtc_channel",
+		        connections: ['c1'],
+		        triggers: ['webrtc_trigger'],
+		        templates: { 
+		            localStream: {
+		                // template
+		                id: "webrtc-localstream-template",
+		                // target where the template will be applied
+		                target: "#webrtc-localstream-target"
+		            },
+		            remoteStream: {
+                        // template
+		                id: "webrtc-remotestream-template",
+                        // target where the template will be applied
+		                target: "#webrtc-remotestream-target"
+		            }
+		        }
+		    }, function (tag) {
+		        rtcTag = tag;
+                // start streaming camera locally
+		        rtcTag.model.start();
+		    });
+		});
+	</script>
+</head>
+<body>
+	<div id="webrtc-localstream-target"></div>
+	<div id="webrtc-remotestream-target"></div>
+
+	<script type="text/html" id="webrtc-localstream-template">
+		<div class="xrtml-webrtc-localstream-controls">
+			<input type="button" value="Start" data-bind="click: start, enable: !localStream.url()" />
+			<input type="button" value="Call" data-bind="click: call, enable: !remoteStream.url()" />
+			<input type="button" value="Hang up" data-bind="click: hangup, enable: remoteStream.url()" />
+		</div>
+		<div class="xrtml-rtc-localstream">
+			<canvas style="display:none;"></canvas>
+			<video autoplay data-bind="attr: { src: localStream.url }" style="width: 300px"></video>
+		</div>
+	</script>
+	
+	<script type="text/html" id="webrtc-remotestream-template">
+		<div class="xrtml-rtc-remotestream">
+			<video autoplay data-bind="attr: { src: remoteStream.url }" style="width: 300px"></video>
+		</div>
+	</script>
+</body>
+</html>
