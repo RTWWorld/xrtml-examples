@@ -243,7 +243,7 @@ xRTML.load(function () {
     });
 
     // Apply the data to the template defined in html script.
-    xRTML.Templating.applyBindings({.
+    xRTML.Templating.applyBindings({
         // The target where the template will be rendered.
         node: xRTML.Sizzle("#dashboard")[0],
         binding: {
