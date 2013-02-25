@@ -1,4 +1,4 @@
-# xRTML Connection/Channels Dashboard
+# xRTML Connection Announcement Sub Channels
 The purpose of this demo is to show how to use the announcement sub channel of the connection.
 
 As you possibly know, ORTC servers send monitoring messages to 4 specific public channels (ortcClientConnected, ortcClientDisconnected, ortcClientSubscribed and ortcClientUnsubscribed).
