@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<title>App Counter</title>
+	
+	<script type="text/javascript" src="http://code.xrtml.org/xrtml-3.1.0.js"></script>
+
+	<script type="text/javascript" src="./browserdetection.js"></script>
+	
+	<script type="text/javascript">
+
+		BrowserDetect.init();
+
+		xRTML.load(function(){
+
+			xRTML.Config.debug = true;
+
+			xRTML.ConnectionManager.create({
+				id: "myConnection",
+				url: "http://ortc-developers.realtime.co/server/2.1",
+				appKey: "myAppKey",
+				authToken: 'myAuthToken',
+				// Here we set the announcement sub channel
+				announcementSubChannel: BrowserDetect.browser.toLowerCase(),
+				onconnect: function(){
+					alert("Connected!");
+				}
+			});
+
+		});
+
+	</script>
+</head>
+<body>
+
+	
+</body>
+</html>
